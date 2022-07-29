@@ -134,3 +134,15 @@ def preprocess_csv_files(source_path, destination_path):
     print("Time used: {:.2f} minutes".format((timer() - start_time)/60))
     start_time   = timer()
     print("Number of used data:", len(values)) 
+
+# Concatenate CSV Function
+def concat_csv(csv_path, file_name):
+    '''Concat csv in folder become one set of csv with assigned file name'''
+    os.chdir(csv_path)
+    extension = 'csv'
+    all_filenames = [i for i in glob.glob('*.{}'.format(extension))]
+    
+    # Combine all files in the list
+    combined_csv = pd.concat([pd.read_csv(f) for f in all_filenames ])
+    # Export to csv with assigned name
+    combined_csv.to_csv(file_name, index=False, encoding='utf-8-sig')
