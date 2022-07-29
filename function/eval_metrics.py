@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 # Unique coordinate function
-def unique_coor:
+def unique_coor(df):
     """Calculate unique coordinate of waypoint defined"""
 
     # Creating waypoint x,y, and waypoint -n list from dataframe
