@@ -146,3 +146,44 @@ def concat_csv(csv_path, file_name):
     combined_csv = pd.concat([pd.read_csv(f) for f in all_filenames ])
     # Export to csv with assigned name
     combined_csv.to_csv(file_name, index=False, encoding='utf-8-sig')
+
+# Create correlation table Function
+def correlation(df,var):
+    """clean up NaN values after using correlation function, convert it into percentage,
+    convert it as dataframe both for positive and negative value,
+    and sort descending for the absolute value.
+    (df is dataframe that want to be analyzed, and var is name of parameter which we want to correlate)"""
+    
+    # Positive values section
+    # Calculating pos_correlation of all dataframe in percent
+    corr = np.round(df.corr()*100,2)
+    
+    # Sort pos_correlation value descending
+    corr = corr.sort_values(by=[var], ascending=False)[var]
+    corr = corr.to_frame() # Convert series to DataFrame
+    corr = corr.dropna() # Drop NaN values of the DataFrame
+
+    # Create new column for positive pos_correlation value
+    pos_corr = corr[[var]].copy() # Create a copy of correlation dataframe
+    pos_corr['pos_corr_'+ var] = pos_corr[var].where(pos_corr[var]>0)
+
+    # Drop original column
+    pos_corr.drop(var,axis=1,inplace=True)
+
+    # Drop NaN value as a result of filtering positive value only
+    pos_corr = pos_corr.dropna(subset=['pos_corr_'+ var])
+    
+# -----------------------------------------------------------------------
+    # Negative values section
+    # Create new column for negative correlation value
+    neg_corr = corr[[var]].copy() # Create a copy of correlation dataframe
+    neg_corr['neg_corr_'+ var] = neg_corr[var].where(neg_corr[var]<0)
+
+    # Drop original column
+    neg_corr.drop(var,axis=1,inplace=True)
+
+    # Drop NaN value as a result of filtering positive value only
+    neg_corr = neg_corr.dropna(subset=['neg_corr_'+ var])
+    neg_corr = neg_corr.sort_values(by=['neg_corr_'+ var],axis=0, ascending=True)
+
+    return pos_corr, neg_corr
