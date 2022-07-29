@@ -115,10 +115,10 @@ def preprocess_csv_files(source_path, destination_path):
         df.columns = column_list
 
         # Using pre-built function to preprocess dataframe
-        df = resample_df(df)
-        df = data_slicing(df)
-        df = remove_outliers(df)
         df = data_smoothing(df)
+        df = data_slicing(df)
+        df = resample_df(df, freq = 4) # Resample with frequency = 4s
+        df = remove_outliers(df)
         
         # Save as new CSV files
         _, file_name = csv_file.split('\\')
