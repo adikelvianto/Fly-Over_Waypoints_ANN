@@ -32,7 +32,6 @@ def remove_outliers(df):
             df.drop(i, axis=0, inplace=True)
     else:
         pass
-    
     return df
 
 # Data Smoothing Function
@@ -62,10 +61,10 @@ def data_smoothing(df):
     
     # Assign back to dataframe
     df.loc[1:,['JSRoll_Sim']] = converted
-    
     return df
 
 # Data Slicing Function
+def data_slicing(df):
     '''Slice data before AC turn back to the last WP'''
 
     # Find number of waypoints that create the mission
@@ -80,5 +79,4 @@ def data_smoothing(df):
     
     # Cut the dataframe until the last index of final_index
     df = df[:last_wp_list[-1]]
-    
     return df  
