@@ -187,3 +187,47 @@ def correlation(df,var):
     neg_corr = neg_corr.sort_values(by=['neg_corr_'+ var],axis=0, ascending=True)
 
     return pos_corr, neg_corr
+
+def roll_section(df):
+    indexes, _ = index_wp(df)
+    str_roll_min = []
+    str_roll_max = []
+    avg_roll_list = []
+    std_roll_list = []
+
+    for i in range(len(indexes)-1):
+        min_roll = np.round(np.min(df['phi'][indexes[i]:indexes[i+1]]),2)
+        max_roll = np.round(np.max(df['phi'][indexes[i]:indexes[i+1]]),2)
+        avg_roll = np.round(np.mean(df['phi'][indexes[i]:indexes[i+1]]),2)
+        std_roll = np.round(np.std(df['phi'][indexes[i]:indexes[i+1]]),2)
+
+        str_roll_min.append(min_roll)
+        str_roll_max.append(max_roll)
+        avg_roll_list.append(avg_roll)
+        std_roll_list.append(std_roll)
+        
+    return str_roll_min, str_roll_max, avg_roll_list, std_roll_list
+
+def roll_criteria(df):
+    
+        # Create new csv
+        df_character = pd.DataFrame(columns=['current_wp', 'next_wp','section_min_roll', 'section_max_roll'])
+
+        # Define variable needed
+        roll_min, roll_max, roll_avg, roll_std = roll_section(df)
+        current_wp = np.arange(len(np.unique(df['num_wp'])))
+        next_wp = current_wp + 1 
+
+        # Assign variable to new dataframe
+        df_character['current_wp'] = current_wp
+        df_character['next_wp'] = next_wp
+        df_character['section_min_roll'] = roll_min
+        df_character['section_max_roll'] = roll_max
+
+        # Split dataframe based on training roll angle character
+        df_char1 = df_character[(df_character.section_min_roll>=-10) & (df_character.section_max_roll<=10)]
+        df_char2 = df_character[(df_character.section_min_roll>=-10) & (df_character.section_max_roll<=40)]
+        df_char3 = df_character[(df_character.section_min_roll>=-40) & (df_character.section_max_roll<=10)]
+        df_char4 = df_character[(df_character.section_min_roll>=-40) & (df_character.section_max_roll<=40)]
+        
+        return df_char1, df_char2, df_char3, df_char4
