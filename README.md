@@ -8,7 +8,7 @@ Steps of this project is as follow:
 This process showed on Prepare Dataset.ipynb file, where in this step, mission data that collected from PID based will be resampled, smoothed and cleaned. 
 
 # Split Dataset
-This process showed on Split Dataset.ipynb file. In this step, all dattasets collected will be split based on roll angle criteria
+This process showed on [Split Dataset.ipynb file](https://github.com/adikelvianto/Fly-Over_Waypoints_ANN/blob/main/Split%20Dataset.ipynb). In this step, all dattasets collected will be split based on roll angle criteria
 
 # Training ANN Model
 This process showed on Training ANN Model.ipynb file. This file containing scaling, bayesian optimization, save model, and evalute result to validation dataset. 
