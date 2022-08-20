@@ -8,13 +8,13 @@ Steps of this project is as follow:
 This process showed on Prepare Dataset.ipynb file, where in this step, mission data that collected from PID based will be resampled, smoothed and cleaned. 
 
 # Split Dataset
-This process showed on [Split Dataset.ipynb file](https://github.com/adikelvianto/Fly-Over_Waypoints_ANN/blob/main/Split%20Dataset.ipynb). In this step, all dattasets collected will be split based on roll angle criteria
+This process showed on [Split Dataset.ipynb](https://github.com/adikelvianto/Fly-Over_Waypoints_ANN/blob/main/Split%20Dataset.ipynb). In this step, all dattasets collected will be split based on roll angle criteria
 
 # Training ANN Model
-This process showed on Training ANN Model.ipynb file. This file containing scaling, bayesian optimization, save model, and evalute result to validation dataset. 
+This process showed on [Training ANN Model.ipynb](https://github.com/adikelvianto/Fly-Over_Waypoints_ANN/blob/main/Split%20Dataset.ipynb). This file containing scaling, bayesian optimization, save model, and evalute result to validation dataset. 
 
 # Evaluate ANN Result
-This process can be found on Prepare Dataset.ipynb, where all of the data get from ANN model simulation will be plotted.
+This process can be found on [Prepare Dataset.ipynb](https://github.com/adikelvianto/Fly-Over_Waypoints_ANN/blob/main/Evalute%20ANN%20Result.ipynb), where all of the data get from ANN model simulation will be plotted.
 
 # Analysis
-Analysis done on this project shown in Analysis_10Aug.xlsx file. 
+Analysis done on this project shown in [Analysis_10Aug.xlsx](https://github.com/adikelvianto/Fly-Over_Waypoints_ANN/blob/main/Analysis_10Aug.xlsx) file. 
