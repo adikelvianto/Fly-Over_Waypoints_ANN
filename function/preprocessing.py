@@ -188,6 +188,7 @@ def correlation(df,var):
 
     return pos_corr, neg_corr
 
+# Function to create roll criteria each section
 def roll_section(df):
     indexes, _ = index_wp(df)
     str_roll_min = []
@@ -208,8 +209,24 @@ def roll_section(df):
         
     return str_roll_min, str_roll_max, avg_roll_list, std_roll_list
 
-def roll_criteria(df):
+# Function to calculate average cross track distance each section
+def track_error_section(df):
+    indexes, _ = index_wp(df)
+    track_error = track_error_dist(df)
+    avg_te_list = []
+    std_te_list = []
     
+    for i in range(len(indexes)-1):
+        avg_te = np.round(np.mean(track_error[indexes[i]:indexes[i+1]]),2)
+        std_te = np.round(np.std(track_error[indexes[i]:indexes[i+1]]),2)
+
+        avg_te_list.append(avg_te)
+        std_te_list.append(std_te)
+        
+    return avg_te_list, std_te_list
+
+# Function that return 4 dataframes from roll criteria each section
+def roll_criteria(df):
         # Create new csv
         df_character = pd.DataFrame(columns=['current_wp', 'next_wp','section_min_roll', 'section_max_roll'])
 
@@ -231,3 +248,6 @@ def roll_criteria(df):
         df_char4 = df_character[(df_character.section_min_roll>=-40) & (df_character.section_max_roll<=40)]
         
         return df_char1, df_char2, df_char3, df_char4
+
+ 
+   
