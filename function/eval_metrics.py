@@ -2,6 +2,46 @@
 import pandas as pd
 import numpy as np
 
+# Function to give column name to testing simulation result
+def give_column_name_ann(source_path, destination_path):
+    
+    # Initiate Timer 
+    top_timer = timer()
+    start_time = timer()
+    
+    # Creating empty list to store how many data is used
+    values = []
+    
+    # Define csv path
+    csv_path = glob.glob(source_path)
+    
+    for csv_file in csv_path:
+        df = pd.read_csv(csv_file)
+        
+        column_list = ['index','lat', 'lon', 'alt', 'X', 'Y', 'Z',
+                       'psi', 'theta', 'phi','TAS', 'JSHead', 'JSPitch', 'JSRoll',
+                      'throttle', 'thrust', 'fuel_flow', 'rudder', 'elevator',
+                      'left_ail', 'right_ail', 'ground_speed', 'wind_speed', 'roll_rate',
+                      'num_wp', 'x_wp', 'y_wp', 'z_wp', 'wp_dist', 'yaw_reff',
+                      'wp_stat', 'ph_stat', 'wl_stat', 'yaw_error', 'JSRoll_Sim', 'JSRoll_PID', 'Roll_lim_stat', 'KP', 'KD', 'error_rate']
+
+        df.columns = column_list
+
+        # Save as new CSV files
+        file_name = csv_file.split('\\')[-1]
+        if os.path.exists(Path(destination_path)):
+            df.to_csv(os.path.join(destination_path,file_name), index=False)
+        else:
+            print('Please Create the Folder First!')
+            
+        print('Done:', file_name)   
+        print('-------------------------------------------------------------------------------------------------------------------------------')
+        values.append('1')
+        
+    print("Time used: {:.2f} minutes".format((timer() - start_time)/60))
+    start_time   = timer()
+    print("Number of used data:", len(values)) 
+
 # Unique coordinate function
 def unique_coor(df):
     """Calculate unique coordinate of waypoint defined"""
