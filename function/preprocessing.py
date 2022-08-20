@@ -249,5 +249,42 @@ def roll_criteria(df):
         
         return df_char1, df_char2, df_char3, df_char4
 
- 
-   
+# Function to calculate angle difference from one line to another line
+def angle_diff(df):
+    x , y = unique_coor(df)
+    x.insert(0,0)
+    y.insert(0,0)
+    
+    # Define distance from each wp coordinates
+    new_x = []
+    for i in range(len(x)-1):
+        dist = x[i+1] - x[i]
+        new_x.append(dist)
+    new_y = []
+    for i in range(len(y)-1):
+        dist = y[i+1] - y[i]
+        new_y.append(dist)
+    
+    # Store each inner angle
+    store_angle = [] 
+    for i in range(len(new_x)):
+        angle = np.round(math.degrees(math.atan(new_y[i]/new_x[i])),2)
+        store_angle.append(angle)
+
+    diff_store = []
+    for i in range(len(store_angle)-1):
+        if store_angle[i+1]>0 and store_angle[i]>0:
+            diff = np.round((store_angle[i] - store_angle[i+1]),2)
+            diff_store.append(diff)
+        elif store_angle[i+1]<=0 and store_angle[i]>=0:
+            diff = -1*(180 - abs(store_angle[i]) - abs(store_angle[i+1]))
+            diff_store.append(diff)
+        elif store_angle[i+1]>=0 and store_angle[i]<=0:
+            diff = 180 - abs(store_angle[i]) - abs(store_angle[i+1])
+            diff_store.append(diff)
+        elif store_angle[i+1]<0 and store_angle[i]<0:
+            diff = np.round((store_angle[i] - store_angle[i+1]),2)
+            diff_store.append(diff)
+        
+    return diff_store   
+
