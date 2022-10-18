@@ -14,7 +14,7 @@ This process showed on [Split Dataset.ipynb](https://github.com/adikelvianto/Fly
 This process showed on [Training ANN Model.ipynb](https://github.com/adikelvianto/Fly-Over_Waypoints_ANN/blob/main/Split%20Dataset.ipynb). This file containing scaling, bayesian optimization, save model, and evalute result to validation dataset. 
 
 # Evaluate ANN Result
-This process can be found on [Prepare Dataset.ipynb](https://github.com/adikelvianto/Fly-Over_Waypoints_ANN/blob/main/Evalute%20ANN%20Result.ipynb), where all of the data get from ANN model simulation will be plotted.
+This process can be found on [Evaluate Result.ipynb](https://github.com/adikelvianto/Fly-Over_Waypoints_ANN/blob/main/Evalute%20ANN%20Result.ipynb), where all of the data get from ANN model simulation will be plotted.
 
 # Analysis
 Analysis done on this project shown in [Analysis_10Aug.xlsx](https://github.com/adikelvianto/Fly-Over_Waypoints_ANN/blob/main/Analysis_10Aug.xlsx) file. 
