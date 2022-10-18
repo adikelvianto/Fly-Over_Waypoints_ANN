@@ -1,11 +1,11 @@
-# Fly-over Waypoint Following Control System of Cirrus Vision SF-50 Aircraft using Artificial Neural Network
+# Deep Learning Based Fly-Over Waypoints Control System for Business Jet Aircraft
 
-This is my undergradute thesis project, with the goals are to develop waypoint following controller ANN model for Cirrus Vision SF50 aircraft and study the relationship between training data that categorized by aircraft roll angle during the mission. This study give results that ANN model generally increase closeness of the aircraft to the waypoint compared to the PID method. It also shown that wider datasets didn’t guarantee superior results due to generalizations that model try to made.
+This is my undergradute thesis project, with the goals are to **develop waypoint following controller deep learning model** espescially for **Cirrus Vision SF50** aircraft and **study the relationship between training data** that categorized by aircraft roll angle during the mission. This study give results that deep learning model generally increase closeness of the aircraft to the waypoint compared to the PID method, eventhough the dataset used is a piece of sliced data. It also shown that wider datasets didn’t guarantee superior results due to generalizations that model try to made.
 
 Steps of this project is as follow: 
 
 # Prepare Dataset
-This process showed on Prepare Dataset.ipynb file, where in this step, mission data that collected from PID based will be resampled, smoothed and cleaned. 
+This process showed on [Prepare Dataset.ipynb file](https://github.com/adikelvianto/Fly-Over_Waypoints_ANN/blob/main/Prepare%20Dataset.ipynb), where in this step, mission data that collected from PID based will be resampled, smoothed and cleaned. 
 
 # Split Dataset
 This process showed on [Split Dataset.ipynb](https://github.com/adikelvianto/Fly-Over_Waypoints_ANN/blob/main/Split%20Dataset.ipynb). In this step, all dattasets collected will be split based on roll angle criteria
