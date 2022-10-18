@@ -16,5 +16,21 @@ This process showed on [Training ANN Model.ipynb](https://github.com/adikelviant
 # Evaluate ANN Result
 This process can be found on [Evaluate Result.ipynb](https://github.com/adikelvianto/Fly-Over_Waypoints_ANN/blob/main/Evalute%20ANN%20Result.ipynb), where all of the data get from ANN model simulation will be plotted.
 
+# X-Plane Simulation Result
+* Testing simulation on X-Plane will be conducted in 2 kind of flight mission. 
+* Mission A which consist of 4 waypoints, and Mission B which consist of 10 waypoints. 
+* Video below show how aircraft can accomplish the flight mission defined, using one of deep learning model created. 
+
+
+
+https://user-images.githubusercontent.com/92104520/196452910-a55d6e2d-e9d6-458e-8716-68de4f9876bb.mp4
+
+
+https://user-images.githubusercontent.com/92104520/196451155-ef593c36-dd39-4b2f-8a33-b30ed1b142b7.mp4
+
+
 # Analysis
 Analysis done on this project shown in [Analysis_10Aug.xlsx](https://github.com/adikelvianto/Fly-Over_Waypoints_ANN/blob/main/Analysis_10Aug.xlsx) file. 
+
+# Undegraduate Thesis Report
+All of this project process can be read in my undergraduate thesis report [here]().
