@@ -19,7 +19,7 @@ This process can be found on [Evaluate Result.ipynb](https://github.com/adikelvi
 ## X-Plane Simulation Result
 * Testing simulation on X-Plane will be conducted in 2 kind of flight mission. 
 * Mission A which consist of 4 waypoints, and Mission B which consist of 10 waypoints. 
-* Video below show how aircraft can accomplish the flight mission defined, using one of deep learning model created. 
+* Video below show how Cirrus Vision SF50 aircraft can accomplish the flight mission defined when being simulated using one of deep learning model created.
 
 
 https://user-images.githubusercontent.com/92104520/196455030-7f6f501a-0fa0-4f09-a6af-14ac8921d28c.mp4
