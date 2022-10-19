@@ -5,16 +5,18 @@ This is my undergradute thesis project, with the goals are to **develop waypoint
 # Steps of this project is as follow: 
 
 ## Prepare Dataset
-This process showed on [Prepare Dataset.ipynb file](https://github.com/adikelvianto/Fly-Over_Waypoints_ANN/blob/main/Prepare%20Dataset.ipynb), where in this step, mission data that collected from PID based will be resampled, smoothed and cleaned. 
+This process showed on [Prepare Dataset.ipynb file](https://github.com/adikelvianto/Fly-Over_Waypoints_ANN/blob/main/Prepare%20Dataset.ipynb), where in this step, mission data that collected from PID based will be **resampled**, **smoothed** and **cleaned**. 
 
 ## Split Dataset
-This process showed on [Split Dataset.ipynb](https://github.com/adikelvianto/Fly-Over_Waypoints_ANN/blob/main/Split%20Dataset.ipynb). In this step, all dattasets collected will be split based on roll angle criteria
+This process showed on [Split Dataset.ipynb](https://github.com/adikelvianto/Fly-Over_Waypoints_ANN/blob/main/Split%20Dataset.ipynb). In this step, all dattasets collected will be **split** based on **roll angle criteria**.
 
 ## Train Deep Learning Model
-This process showed on [Training ANN Model.ipynb](https://github.com/adikelvianto/Fly-Over_Waypoints_ANN/blob/main/Split%20Dataset.ipynb). This file containing scaling, bayesian optimization, save model, and evalute result to validation dataset. 
+This process showed on [Training ANN Model.ipynb](https://github.com/adikelvianto/Fly-Over_Waypoints_ANN/blob/main/Split%20Dataset.ipynb). This file containing **scaling**, **bayesian optimization**, **save model**, and **evalute result** to validation dataset. 
 
 ## Evaluate Model Result
-This process can be found on [Evaluate Result.ipynb](https://github.com/adikelvianto/Fly-Over_Waypoints_ANN/blob/main/Evalute%20ANN%20Result.ipynb), where all of the data get from ANN model simulation will be plotted.
+* This process can be found on [Evaluate Result.ipynb](https://github.com/adikelvianto/Fly-Over_Waypoints_ANN/blob/main/Evalute%20ANN%20Result.ipynb), where all of the data get from deep learning model simulation will be plotted. 
+* Simulation done using MATLAB, Simulink and X-Plane. Monitoring system GUI, control system Simulink files can be found in [MATLAB - Simulink Files](https://github.com/adikelvianto/Fly-Over_Waypoints_ANN/tree/main/MATLAB%20-%20Simulink%20Files)
+* Plugins used in order to build communication between X-Plane and Simulink can be found in [X-Plane Plugins](https://github.com/adikelvianto/Fly-Over_Waypoints_ANN/tree/main/X-Plane%20Plugins)
 
 ## X-Plane Simulation Result
 * Testing simulation on X-Plane will be conducted in 2 kind of flight mission. 
