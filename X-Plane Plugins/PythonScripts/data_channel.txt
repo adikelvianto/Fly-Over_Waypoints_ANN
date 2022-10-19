@@ -1,0 +1,43 @@
+01 Lat
+02 Lon
+03 Alt
+04 X
+05 Y
+06 Z
+07 Psi
+08 Theta
+09 Phi
+10 TAS
+11 JSHead
+12 JSPch
+13 JSRoll
+14 Throttle
+15 Thrust
+16 Fuel Flow
+17 Rudder
+18 Elevator
+19 Aileron L
+20 Aileron R
+21 GS
+22 Wind Speed
+23 Wind Direction
+
+24 Waypoint Number
+25 x waypoint
+26 y waypoint
+27 z waypoint
+28 wr - distance to waypoint
+29 yaw ref
+30 Waypoint following STATUS
+31 Pitch hold STATUS
+32 Wing leveller STATUS
+
+
+CONTROLLER TO X-PLANE
+01 yaw hold data - aileron
+02 yaw hold status
+03 wing leveller data
+04 wing leveller status
+05 pitch hold data - elevator
+06 pitch hold status
+
